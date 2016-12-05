@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--白色-->
+    <color name="white">#ffffff</color>
+    <!--亮白色-->
+    <color name="light_white">#c8ffff</color>
+    <!--灰色-->
+    <color name="gray">#ff789089</color>
+    <!--深灰色-->
+    <color name="deep_gray">#ffa8abad</color>
+    <!--黑色-->
+    <color name="black">#000000</color>
+
+
+    <!--主题颜色-->
+    <color name="main_theme">#3CC6E0</color>
+
+    <!--泊位停车-->
+    <!--亮灰色-->
+    <color name="bright_gray">#E2E2E2</color>
+    <!--字体颜色-->
+    <color name="default_text_gray">#8F8F8F</color>
+</resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/captureContainter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <tfcard.wintone.ecar.com.ecarwintonetfcard.camera.ViewfinderView
+        android:id="@+id/viewfinder_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/topMask"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:layout_alignParentTop="true"
+        android:background="@mipmap/camera_scan_mask" />
+
+    <RelativeLayout
+        android:id="@+id/captureCropLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topMask"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/scan_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/camera_recognition_bg" />
+    </RelativeLayout>
+
+
+
+
+    <ImageView
+        android:id="@+id/bottomMask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/captureCropLayout"
+        android:background="@mipmap/camera_scan_mask" />
+
+    <ImageView
+        android:id="@+id/leftMask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomMask"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/topMask"
+        android:layout_toLeftOf="@id/captureCropLayout"
+        android:background="@mipmap/camera_scan_mask" />
+
+    <ImageView
+        android:id="@+id/rightMask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomMask"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/topMask"
+        android:layout_toRightOf="@id/captureCropLayout"
+        android:background="@mipmap/camera_scan_mask" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/captureCropLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dip"
+        android:text="请将车牌放入扫描框中开始识别"
+        android:textColor="@android:color/white"
+        android:textSize="13sp" />
+
+
+</RelativeLayout>
+
+
+
+
+

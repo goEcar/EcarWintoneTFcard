@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WintoneDemo</string>
+
+    <!--相机-->
+    <string name="take_pic">拍照</string>
+    <string name="open_flash_mode">打开闪光灯</string>
+</resources>

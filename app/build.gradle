@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "tfcard.wintone.ecar.com.ecarwintonetfcard"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    //亿车网络框架
+    compile 'com.github.goEcar:EcarNetFream:1.2.6'
+    //亿车工具类
+    compile 'com.github.goEcar:EcarUtil:1.1.0'
+    //文通库
+    compile project(':tfcardlib')
+    //butterKnife
+    compile 'com.jakewharton:butterknife:7.0.1'
+}
