@@ -15,6 +15,7 @@ import butterknife.ButterKnife;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import tfcard.wintone.ecar.R;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.camera.CameraActivity;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.entity.SerialBean;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.net.PubDataCenter;

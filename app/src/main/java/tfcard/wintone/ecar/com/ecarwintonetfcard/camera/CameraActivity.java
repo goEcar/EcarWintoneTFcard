@@ -26,8 +26,8 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 import butterknife.Bind;
+import tfcard.wintone.ecar.R;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.BaseActivity;
-import tfcard.wintone.ecar.com.ecarwintonetfcard.R;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.util.LogUtils;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.util.SPKeyUtils;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.util.SPUtils;

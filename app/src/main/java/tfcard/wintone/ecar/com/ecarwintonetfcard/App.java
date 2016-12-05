@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.res.Resources;
 
+import com.ecar.ecarnet.BuildConfig;
 import com.ecar.ecarnetwork.http.api.ApiBox;
 
 import java.util.LinkedList;
