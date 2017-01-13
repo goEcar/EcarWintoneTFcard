@@ -3,8 +3,7 @@ package tfcard.wintone.ecar.com.ecarwintonetfcard;
 import android.content.Context;
 import android.text.TextUtils;
 
-import tfcard.wintone.ecar.com.ecarwintonetfcard.util.SPKeyUtils;
-import tfcard.wintone.ecar.com.ecarwintonetfcard.util.SPUtils;
+import com.ecaray.wintonlib.util.SPKeyUtils;
 
 
 /**
@@ -45,7 +44,7 @@ public class SerialHelper4WT {
      * @param serial 回调函数
      */
     public void getSerialNum(SerialI serial){
-        String lSerialNum = (String) SPUtils.get(SPKeyUtils.s_SERIAL_NUM,"");
+        String lSerialNum = (String) SPKeyUtils.getSeriaNum(mContext);
         if(!TextUtils.isEmpty(lSerialNum)){
             return;
         }
@@ -53,7 +52,7 @@ public class SerialHelper4WT {
         if (TextUtils.isEmpty(lSerialNum)) {
             serial.getSerial();
         } else {
-            SPUtils.put(SPKeyUtils.s_SERIAL_NUM, lSerialNum);
+            SPKeyUtils.saveSeriaNum(mContext, lSerialNum);
         }
 
     }

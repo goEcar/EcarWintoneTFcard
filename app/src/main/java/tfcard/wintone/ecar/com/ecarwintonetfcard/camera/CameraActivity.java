@@ -18,6 +18,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ecaray.wintonlib.RecogniteHelper4WT;
+import com.ecaray.wintonlib.util.SPKeyUtils;
 import com.wintone.plateid.PlateRecognitionParameter;
 import com.wintone.plateid.RecogService;
 
@@ -29,9 +31,6 @@ import butterknife.Bind;
 import tfcard.wintone.ecar.R;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.BaseActivity;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.util.LogUtils;
-import tfcard.wintone.ecar.com.ecarwintonetfcard.util.SPKeyUtils;
-import tfcard.wintone.ecar.com.ecarwintonetfcard.util.SPUtils;
-import tfcard.wintone.ecar.com.tfcardlib.RecogniteHelper4WT;
 
 
 /**
@@ -144,7 +143,7 @@ public class CameraActivity extends BaseActivity implements Camera.PreviewCallba
     @Override
     protected void initData() {
         //文通序列号获取
-        mSerialNum = (String) SPUtils.get(SPKeyUtils.s_SERIAL_NUM, "");
+        mSerialNum = SPKeyUtils.getSeriaNum(this);
         LogUtils.i("文通序列号", mSerialNum);
         //公司识别
         initSound();

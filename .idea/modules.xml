@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EcarWintoneTFcard.iml" filepath="$PROJECT_DIR$/EcarWintoneTFcard.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tfcardlib/tfcardlib.iml" filepath="$PROJECT_DIR$/tfcardlib/tfcardlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftcardlib/ftcardlib.iml" filepath="$PROJECT_DIR$/ftcardlib/ftcardlib.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package tfcard.wintone.ecar.com.tfcardlib;/*
+package com.ecaray.wintonlib;/*
  *===============================================
  *
  * 文件名:${type_name}
@@ -38,7 +38,6 @@ import com.wintone.plateid.PlateCfgParameter;
 import com.wintone.plateid.RecogService;
 
 
-
 public class RecogniteHelper4WT {
     private static RecogniteHelper4WT recogHelper;
     public RecogService.MyBinder recogBinder;
@@ -70,7 +69,6 @@ public class RecogniteHelper4WT {
             recogBinder = (RecogService.MyBinder) service;
             iInitPlateIDSDK = recogBinder.getInitPlateIDSDK();
             if (iInitPlateIDSDK != 0) {
-
                 nRet = iInitPlateIDSDK;
                 String[] str = {"" + iInitPlateIDSDK};
                 getResult(str, null, null, null);
@@ -94,12 +92,11 @@ public class RecogniteHelper4WT {
             int lBVertFlip = 0;
             int lBDwordAligned = 1;
             recogBinder.setRecogArgu(cfgparameter, lImageformat, lBVertFlip, lBDwordAligned);
-
         }
     };
 
     private RecogniteHelper4WT() {
-//        mServiceIsConnected = false;
+        mServiceIsConnected = false;
 
     }
 
@@ -158,7 +155,7 @@ public class RecogniteHelper4WT {
     /**
      * 回调数据
      */
-    public void getResult(String[] fieldValue, Camera camera, byte[] data,OnResult onResult) {
+    public void getResult(String[] fieldValue, Camera camera, byte[] data, OnResult onResult) {
         if (mCamera != camera) {
             mCamera = camera;
         }

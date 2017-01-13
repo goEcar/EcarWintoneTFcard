@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.ecar.ecarnetwork.http.exception.InvalidException;
+import com.ecaray.wintonlib.AuthHelper;
+import com.ecaray.wintonlib.util.SPKeyUtils;
+import com.wintone.plateid.AuthService;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,8 +22,6 @@ import tfcard.wintone.ecar.R;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.camera.CameraActivity;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.entity.SerialBean;
 import tfcard.wintone.ecar.com.ecarwintonetfcard.net.PubDataCenter;
-import tfcard.wintone.ecar.com.ecarwintonetfcard.util.SPKeyUtils;
-import tfcard.wintone.ecar.com.ecarwintonetfcard.util.SPUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                         String lSerialCode = lSerialBean.serialCode;
                         if(lSerialCode != null && !TextUtils.isEmpty(lSerialCode)){
                             //获取序列号成功则保存
-                            SPUtils.put(SPKeyUtils.s_SERIAL_NUM, lSerialBean.serialCode);
+                            AuthHelper.getInstance().bindAuthService(MainActivity.this,lSerialBean.serialCode);
                         }
                     }
                 }

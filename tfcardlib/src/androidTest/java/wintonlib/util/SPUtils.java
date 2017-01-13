@@ -1,30 +1,27 @@
-package tfcard.wintone.ecar.com.ecarwintonetfcard.util;
+package wintonlib.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-import tfcard.wintone.ecar.com.ecarwintonetfcard.App;
-
 /**
  * ===============================================
- *
+ * <p>
  * 类描述:
- *
+ * <p>
  * 创建人: Eric_Huang
- *
+ * <p>
  * 创建时间: 2016/7/25 16:20
- *
+ * <p>
  * 修改人:Eric_Huang
- *
+ * <p>
  * 修改时间: 2016/7/25 16:20
- *
+ * <p>
  * 修改备注:
- *
+ * <p>
  * ===============================================
  */
 public class SPUtils {
@@ -36,33 +33,27 @@ public class SPUtils {
 
     /**
      * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
-     * @param key       键
-     * @param object    值
+     *
+     * @param key    键
+     * @param object 值
      */
-    public static void put(String key, Object object)
-    {
+    public static void put(Context context, String key, Object object) {
 
-        SharedPreferences sp = App.getInstance().getSharedPreferences(FILE_NAME,
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
                 Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
-        if (object instanceof String)
-        {
+        if (object instanceof String) {
             editor.putString(key, (String) object);
-        } else if (object instanceof Integer)
-        {
+        } else if (object instanceof Integer) {
             editor.putInt(key, (Integer) object);
-        } else if (object instanceof Boolean)
-        {
+        } else if (object instanceof Boolean) {
             editor.putBoolean(key, (Boolean) object);
-        } else if (object instanceof Float)
-        {
+        } else if (object instanceof Float) {
             editor.putFloat(key, (Float) object);
-        } else if (object instanceof Long)
-        {
+        } else if (object instanceof Long) {
             editor.putLong(key, (Long) object);
-        } else
-        {
+        } else {
             editor.putString(key, object.toString());
         }
 
@@ -72,28 +63,22 @@ public class SPUtils {
     /**
      * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
      *
-     * @param key              键
-     * @param defaultObject    默认值
+     * @param key           键
+     * @param defaultObject 默认值
      */
-    public static Object get(String key, Object defaultObject)
-    {
-        SharedPreferences sp = App.getInstance().getSharedPreferences(FILE_NAME,
+    public static Object get(Context context, String key, Object defaultObject) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
                 Context.MODE_PRIVATE);
 
-        if (defaultObject instanceof String)
-        {
+        if (defaultObject instanceof String) {
             return sp.getString(key, (String) defaultObject);
-        } else if (defaultObject instanceof Integer)
-        {
+        } else if (defaultObject instanceof Integer) {
             return sp.getInt(key, (Integer) defaultObject);
-        } else if (defaultObject instanceof Boolean)
-        {
+        } else if (defaultObject instanceof Boolean) {
             return sp.getBoolean(key, (Boolean) defaultObject);
-        } else if (defaultObject instanceof Float)
-        {
+        } else if (defaultObject instanceof Float) {
             return sp.getFloat(key, (Float) defaultObject);
-        } else if (defaultObject instanceof Long)
-        {
+        } else if (defaultObject instanceof Long) {
             return sp.getLong(key, (Long) defaultObject);
         }
 
@@ -102,11 +87,11 @@ public class SPUtils {
 
     /**
      * 移除某个key值已经对应的值
-     * @param key       键
+     *
+     * @param key 键
      */
-    public static void remove(String key)
-    {
-        SharedPreferences sp = App.getInstance().getSharedPreferences(FILE_NAME,
+    public static void remove(Context context, String key) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
                 Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.remove(key);
@@ -116,9 +101,8 @@ public class SPUtils {
     /**
      * 清除所有数据
      */
-    public static void clear()
-    {
-        SharedPreferences sp = App.getInstance().getSharedPreferences(FILE_NAME,
+    public static void clear(Context context) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
                 Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.clear();
@@ -127,23 +111,23 @@ public class SPUtils {
 
     /**
      * 查询某个key是否已经存在
-     * @param key       键
-     * @return          布尔值
+     *
+     * @param key 键
+     * @return 布尔值
      */
-    public static boolean contains(String key)
-    {
-        SharedPreferences sp = App.getInstance().getSharedPreferences(FILE_NAME,
+    public static boolean contains(Context context, String key) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
                 Context.MODE_PRIVATE);
         return sp.contains(key);
     }
 
     /**
      * 返回所有的键值对
-     * @return              Map
+     *
+     * @return Map
      */
-    public static Map<String, ?> getAll()
-    {
-        SharedPreferences sp = App.getInstance().getSharedPreferences(FILE_NAME,
+    public static Map<String, ?> getAll(Context context) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
                 Context.MODE_PRIVATE);
         return sp.getAll();
     }
@@ -152,10 +136,8 @@ public class SPUtils {
      * 创建一个解决SharedPreferencesCompat.apply方法的一个兼容类
      *
      * @author zhy
-     *
      */
-    private static class SharedPreferencesCompat
-    {
+    private static class SharedPreferencesCompat {
         private static final Method sApplyMethod = findApplyMethod();
 
         /**
@@ -163,15 +145,12 @@ public class SPUtils {
          *
          * @return
          */
-        @SuppressWarnings({ "unchecked", "rawtypes" })
-        private static Method findApplyMethod()
-        {
-            try
-            {
+        @SuppressWarnings({"unchecked", "rawtypes"})
+        private static Method findApplyMethod() {
+            try {
                 Class clz = SharedPreferences.Editor.class;
                 return clz.getMethod("apply");
-            } catch (NoSuchMethodException e)
-            {
+            } catch (NoSuchMethodException e) {
             }
 
             return null;
@@ -182,12 +161,9 @@ public class SPUtils {
          *
          * @param editor
          */
-        public static void apply(SharedPreferences.Editor editor)
-        {
-            try
-            {
-                if (sApplyMethod != null)
-                {
+        public static void apply(SharedPreferences.Editor editor) {
+            try {
+                if (sApplyMethod != null) {
                     sApplyMethod.invoke(editor);
                     return;
                 }
